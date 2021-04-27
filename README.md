@@ -1,0 +1,1 @@
+# AMTEGA32_LIB
