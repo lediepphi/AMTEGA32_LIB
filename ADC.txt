@@ -1,0 +1,11 @@
+void ADC_Init(){
+	ADCSRA |= (1<<ADEN) | (1<<ADPS2) | (1<<ADPS1) | (1<<ADPS0);	
+	ADMUX |= (0<<REFS1) | (1<<REFS0);
+}
+
+uint16_t ADC_Read(uint8_t Adc_channel){
+	ADMUX |= Adc_channel;					 
+    	ADCSRA |= (1<<ADSC);							
+	while(~((ADCSRA>>ADIF)&1))	
+	return ADCW;								
+}
